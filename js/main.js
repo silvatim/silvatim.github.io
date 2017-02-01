@@ -1,9 +1,8 @@
-console.log("working");
 
 var s = skrollr.init({
-  render: function(data){
-    document.querySelector(".whereami").innerHTML = data.curTop;
-  }
+  // render: function(data){
+    // document.querySelector(".whereami").innerHTML = data.curTop;
+  // }
 });
 
 //The options (second parameter) are all optional. The values shown are the default values.
@@ -49,8 +48,6 @@ skrollr.menu.init(s, {
     //Add hash link (e.g. `#foo`) to URL or not.
     updateUrl: false //defaults to `true`.
 });
-
-
 
 
 // var eyeball = document.querySelector(".eyeball");

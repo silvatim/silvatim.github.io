@@ -1,8 +1,4 @@
-
 var s = skrollr.init({
-  // render: function(data){
-    // document.querySelector(".whereami").innerHTML = data.curTop;
-  // }
 });
 
 //The options (second parameter) are all optional. The values shown are the default values.
@@ -64,3 +60,5 @@ skrollr.menu.init(s, {
 //   document.body.style.cursor = 'none';
 // }
 // }
+
+

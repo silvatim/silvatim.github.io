@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Oswald|Vesper+Libre'); */
+@import url('https://fonts.googleapis.com/css?family=Oswald|Vesper+Libre');
 
 html, body {
   margin:0;
@@ -12,7 +12,7 @@ nav {
     font-size: 20px;
     position:fixed;
     visibility: none;
-    z-index: 1000;
+    z-index: 10;
     width: 100%;
 }
 nav ul {
@@ -23,11 +23,17 @@ nav li {
     padding: 0 10px;
 }
 nav a{
-  color:gray;
+color:#666B6A;
 }
 
-/* FIRST SECTION */
+nav a:hover{
+ color: #9DA0A0;
+}
 
+/* MOUSE SCROLL */
+
+
+/* FIRST SECTION */
 .mainheading{
   font-size: 5em;
   color: white;
@@ -42,6 +48,21 @@ nav a{
   top: 49%;
   font-family: 'Vesper Libre', serif;
 }
+.mousescroll{
+    top: 95%;
+    /* margin:0 auto; */
+    position: fixed;
+    z-index: 10;
+    height: 4%;
+    width: 4%;
+    left:48.5%;
+    background:url('../img/down.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:center;
+    opacity:0.4;
+}
+
 
 /* ABOUT SECTION */
 
@@ -64,21 +85,17 @@ nav a{
   width: 100%;
   color: black;
   text-align:center;
-  z-index: -2;
   font-size: 4em;
   top: 100%;
-  /* border: 1px solid yellow; */
 }
 
 .about-text{
   position:fixed;
   width: 70%;
   color: black;
-  z-index: -2;
   font-size: 1.5em;
   top: 100%;
   font-family: 'Vesper Libre', serif;
-  /* border:1px solid red; */
   text-align:center;
   left: 50%;
   transform: translate(-50%, 0);
@@ -103,7 +120,6 @@ height:100%;
   height: 100%;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
-  z-index: 1;
   opacity: 1;
   text-align:center;
 }
@@ -113,7 +129,6 @@ height:100%;
   position:fixed;
   top:0px;
   background:#A0B1C2;
-  z-index:-1;
   opacity: 0;
   text-align:center;
   width: 100%;
@@ -174,7 +189,6 @@ height:100%;
  width: 30%;
  height: 100%;
  display:inline-block;
-
 }
 
 .projects h2{
@@ -198,7 +212,6 @@ height:100%;
   background-size:cover;
   background-repeat: no-repeat;
   background-position:center;
-  z-index:-5;
   width:100%;
   height:100%;
 }
@@ -218,7 +231,6 @@ height:100%;
 .container{
    width:50%;
    height:70%;
-   /* height:88%; */
    position:relative;
    margin:0 auto;
    perspective: 50%;
@@ -246,7 +258,6 @@ height:100%;
 }
 
 .contactsbox{
-/* background: #001D3A; */
   background:#162E44;
 }
 
@@ -337,7 +348,6 @@ height:100%;
 }
 
 .contactcontainer{
-  /* border:1px solid white; */
   width: 40%;
   height: 10%;
   margin: 0 auto;
@@ -355,10 +365,7 @@ height:100%;
   float:left;
 }
 
-
-
 .contactheading{
-  /* border: 1px solid yellow; */
   display:inline-block;
   font-size: 1.2em;
   margin-top: 30px;
@@ -367,6 +374,7 @@ height:100%;
   float: left;
   padding-left:5%;
   padding-top:5%;
+  color:white;
 }
 
 .icon{
@@ -393,8 +401,3 @@ height:100%;
  padding-top:0;
 }
 
-.cl-effect-7 a{
-  font-size: 1em;
-  padding:6px 5px 5px;
-  margin:15px 10px;
-}

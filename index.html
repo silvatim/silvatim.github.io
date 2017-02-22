@@ -5,89 +5,195 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tim Silva Portfolio</title>
+    <link rel="stylesheet" href="css/component.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <nav class="wrap">
+      <nav id="nav-main">
         <ul>
-            <li><a href="#home" data-menu-top="0">Home</a></li>
-            <li><a href="#about" data-menu-top="1900">About Me</a></li>
-            <li><a href="#portfolio" data-menu-top="5900">Portfolio</a></li>
-            <li><a href="#skills" data-menu-top="7500">Skills</a></li>
-            <li><a href="#contact" data-menu-top="10000">Contact</a></li>
+          <li><a href="#slide00">Home</a></li>
+          <li><a href="#slide01">About Me</a></li>
+          <li><a href="#slide02">Portfolio</a></li>
+          <li><a href="#slide03">Skills</a></li>
+          <li><a href="#slide04">Contact</a></li>
         </ul>
-    </nav>
-    <div class='frame1 frame' data-0='transform: scale(1.0,1.0);' data-150p='transform: scale(1.3, 1.3);
-         opacity: 1;' data-200p='opacity: 0; transform: scale(6, 6);'>
+      </nav>
+    <div id="nav-trigger"><span>MENU</span></div>
+    <nav id="nav-mobile"></nav>
+
+    <div class="mousescroll"></div>
+
+
+
+      <div id="slide00" class="slide">
+        <canvas id="bgCanvas"></canvas>
         <div class="mainheading">TIMOTHY SILVA</div>
         <div class="secondaryheading">Full Stack Web Developer</div>
     </div>
 
-    <div class="mousescroll" data-2200p='transform:rotate(0deg);' data-2400p='transform:rotate(180deg);'>
-    </div>
-
-    <div id="about">
-        <div class="about-heading frame" data-200p='top: 100%;' data-250p='top: 40%;' data-300p='top: 10%;' data-400p='top: 10%;' data-600p='top: 10%;' data-700p='top: 0%;' data-750p='top: -100%;'>
-            <div id="profilepic"></div>About Me</div>
-        <div id="yo" class="about-text" data-250p='top: 100%;' data-300p='top: 70%;' data-400p='top: 42%;' data-600p='top: 42%;' data-700p='top: 30%;' data-750p='top: -100%;'>
-            <p>FULL STACK WEB DEVELOPER...</p>
-            <p>TECHIE...DIETITIAN...FOODIE...AMATURE PHOTOGRAPHER...TRAVELHOLIC...</p>
-            <p>Having just completed a web development immersive course with General Assembly i'm on the lookout for new and exciting <span>opportunities</span> to <span>learn</span>, <span>develop</span> and work with <span>amazing people</span>. I love
-                problem solving and am very <span>people focussed</span> having worked in health as a Dietitan for numerous years. I'm <span>passionate</span> about developing and my goal now is continue to grow to as a <span>full stack</span> or <span>front end developer</span>.</p>
-        </div>
-    </div>
-
-    <div id="portfolio" class='frame2' data-700p='opacity: 0;' data-800p='opacity: 0.5' data-900p='opacity: 1;' data-1300p='top:0%;' data-1400p='top:0%;' data-1600p='top:0%;' data-1700p='top:0%;' data-1800p='top:-20%;' data-1900p='top:-50%;' data-2000p='top:-100%;'>
-
-        <div class="portfolioheading" data-1300p='opacity:0;' data-1400p='opacity:0.5;' data-1500p='opacity:1;'>
-            Recent Work </div>
-
-        <div class='vitamins' data-900p='top:100%;' data-1000p='top:40%;' data-1100p='top:25%;' data-1200p='left:34.7%;' data-1300p='left:15%;
-       -webkit-box-shadow: 0px 0px 35px 1px rgba(0,0,0,0);
-       -moz-box-shadow: 0px 0px 35px 1px rgba(0,0,0,0);
-        box-shadow: 0px 0px 35px 1px rgba(0,0,0,0);' data-1400p='left:2.5%;
-       -webkit-box-shadow: 0px 0px 35px 1px rgba(0,0,0,1);
-       -moz-box-shadow: 0px 0px 35px 1px rgba(0,0,0,1);
-        box-shadow: 0px 0px 35px 1px rgba(0,0,0,1);'>
-        </div>
-
-        <div class='tours' data-900p='top:100%;' data-1000p='top:40%;' data-1100p='top:25%;' data-1200p='left:34.7%;' data-1300p='left:50%;
-       -webkit-box-shadow: 0px 0px 35px 1px rgba(0,0,0,0);
-       -moz-box-shadow: 0px 0px 35px 1px rgba(0,0,0,0);
-        box-shadow: 0px 0px 35px 1px rgba(0,0,0,0);' data-1400p='left:66.7%;
-       -webkit-box-shadow: 0px 0px 35px 1px rgba(0,0,0,1);
-       -moz-box-shadow: 0px 0px 35px 1px rgba(0,0,0,1);
-        box-shadow: 0px 0px 35px 1px rgba(0,0,0,1);'>
-        </div>
-
-        <div class='photos' data-900p='top:100%;' data-1000p='top:40%;' data-1100p='top:25%;'>
-        </div>
-
-        <div class="descriptions" data-1300p='opacity:0;' data-1400p='opacity:0.5;' data-1500p='opacity:1;'>
-            <div class="project1 projects">
-                <h2>Vita-Stats</h2>
-                <p>View and interact with the atomic structure of vitamins. See what the recommended daily intakes of vitamins are for specific demographics. Read about vitamins benefits and find high value food sources. Created using D3.js</p>
-                <p><a href="https://silvatim.github.io/vita-stats/" target="_blank">Demo</a> | <a href="https://github.com/silvatim/vita-stats" target='_blank'>Github</a></p>
-            </div>
-            <div class="project2 projects">
-                <h2>Maximum Exposure</h2>
-                <p>A photo sharing site for professional photographers and enthusiasts. View, share and search for amazing photos or for inspiration on your next shoot. Created with Ruby on Rails, Materialize for styling and Cloudinary for image uploads.</p>
-                <p><a href="https://maxexposure.herokuapp.com/" target='_blank'>Demo</a> | <a href="https://github.com/silvatim/photo-app" target='_blank'>Github</a></p>
-
-            </div>
-            <div class="project3 projects">
-                <h2>Crafty Tours</h2>
-                <p>A beer lovers paradise. The Crafty Tours concept is simple, view different craft brewery tours near you and book the ones your interested in. Made with google maps api, backbone.js, ruby on rails with a parallax home page.</p>
-                <p><a href="https://crafty-tours.herokuapp.com" target='_blank'>Demo</a> | <a href="https://github.com/silvatim/crafty_behaviour" target='_blank'>Github</a></p>
-
+   <div id="slide01" class="slide">
+     <div class="wrapper">
+            <div class="project" id="project">
+                    <div class="project-image">
+                      <img src="img/profile.jpg" alt="">
+                        <div class="project-pixels">
+                            <div class="pixel pixel01 sizeS"></div>
+                            <div class="pixel pixel02 sizeXL"></div>
+                            <div class="pixel pixel03 sizeL"></div>
+                            <div class="pixel pixel04 sizeXL"></div>
+                            <div class="pixel pixel05 sizeL"></div>
+                            <div class="pixel pixel06 sizeS"></div>
+                            <div class="pixel pixel07 sizeL"></div>
+                            <div class="pixel pixel08 sizeS"></div>
+                            <div class="pixel pixel09 sizeL"></div>
+                            <div class="pixel pixel10 sizeS"></div>
+                            <div class="pixel pixel11 sizeS"></div>
+                            <div class="pixel pixel12 sizeS"></div>
+                            <div class="pixel pixel13 sizeXL"></div>
+                            <div class="pixel pixel14 sizeL"></div>
+                            <div class="pixel pixel15 sizeXL"></div>
+                            <div class="pixel pixel16 sizeL"></div>
+                            <div class="pixel pixel17 sizeS"></div>
+                            <div class="pixel pixel18 sizeL"></div>
+                            <div class="pixel pixel19 sizeS"></div>
+                            <div class="pixel pixel20 sizeL"></div>
+                            <div class="pixel pixel21 sizeS"></div>
+                            <div class="pixel pixel22 sizeS"></div>
+                        </div>
+                    </div>
+                    <div id='link'></div>
+                    <h2 class="project-title">About Me</h2>
+                     <div class="project-paragraph">
+                      <p>FULL STACK WEB DEVELOPER...DIETITIAN...FOODIE...TRAVELHOLIC</p>
+                      <p>Having just completed a web development immersive course with General Assembly
+                      i'm on the lookout for new and exciting opportunities to learn, develop and work with amazing people.
+                      I love problem solving and am very people focussed having worked in health as a Dietitan for numerous years.
+                      I'm passionate about developing and my goal now is continue to grow to as a full stack or front end developer.</p>
+                   </div>
             </div>
         </div>
+  </div>
 
-        <div class="skills">
-            <div class='container' data-1800p='top:100%;' data-1900p='top:60%;' data-2000p='top:20%;'>
-                <div id='card'>
-                    <div class='contactsbox' data-2200p='transform:rotateX(180deg);' data-2300p='transform:rotateX(90deg);' data-2400p='transform:rotateX(0deg);'>
+  <div id="slide02" class="slide">
+      <div class="portfolio projectContainer">
+        <div class="portfolioHeading"> Recent Work</div>
+        </div>
+        <div class="vitamins projectContainer">
+          <div class="images" >
+              <img class='computer' src="img/computer.png" alt="" />
+              <img class= 'projectimg' src="img/vitamins.png" alt="" />
+          </div>
+          <div class="description">
+             <div class="projectHeading">Vita-Stats</div>
+             <div class="projectDescription">View and interact with the atomic structure of vitamins.
+              See what the recommended daily intakes of vitamins are for
+               specific demographics. Read about vitamins benefits and find high value food sources.
+               Created using D3.js</div>
+            <p><a href="https://silvatim.github.io/vita-stats/" target="_blank">Demo</a> |
+               <a href="https://github.com/silvatim/vita-stats" target='_blank'>Github</a></p>
+           </div>
+      </div>
+
+        <div class="photo projectContainer">
+          <div class="images" >
+              <img class='computer' src="img/computer.png" alt="" />
+              <img class= 'projectimg' src="img/photos.png" alt="" />
+          </div>
+            <div class="description">
+                  <div class="projectHeading">Maximum Exposure</div>
+                  <div class="projectDescription">A photo sharing site for professional photographers and enthusiasts.
+                  View, share and search for amazing photos or for inspiration on your next shoot.
+                  Created with Ruby on Rails, Materialize for styling and Cloudinary for image uploads.</div>
+                  <p><a href="https://maxexposure.herokuapp.com/" target='_blank'>Demo</a> |
+                     <a href="https://github.com/silvatim/photo-app" target='_blank'>Github</a></p>
+              </div>
+        </div>
+
+        <div class="tours projectContainer">
+          <div class="images" >
+              <img class='computer' src="img/computer.png" alt="" />
+              <img class= 'projectimg' src="img/craftytours.png" alt="" />
+          </div>
+            <div class="description">
+                  <div class="projectHeading">Crafty Tours</div>
+                  <div class="projectDescription">A beer lovers paradise. The Crafty Tours concept is simple,
+                    view different craft brewery tours near you and book the ones your interested in. Made with google maps api,
+                    backbone.js, ruby on rails with a parallax home page.</div>
+                  <p><a href="https://crafty-tours.herokuapp.com" target='_blank'>Demo</a> |
+                     <a href="https://github.com/silvatim/crafty_behaviour" target='_blank'>Github</a></p>
+              </div>
+
+            </div>
+     </div>
+
+  <div id="slide03" class="slide">
+              <div class="skillsboxheading">Skills</div>
+          <div class='skillsbox'>
+            <div class="icon">
+              <img src="img/ruby.png" alt="Ruby" />
+              <p>Ruby</p>
+            </div>
+            <div class="icon">
+              <img src="img/js.png" alt="js" />
+              <p>Javascript</p>
+           </div>
+            <div class="icon">
+              <img src="img/html.png" alt="html" />
+              <p>HTML</p>
+           </div>
+            <div class="icon">
+              <img src="img/git.svg" alt="git" />
+              <p>GIT</p>
+           </div>
+            <div class="icon">
+              <img src="img/react.png" alt="react" />
+              <p>React</p>
+           </div>
+            <div class="icon">
+              <img src="img/backbone.png" alt="backbone" />
+              <p>Backbone</p>
+           </div>
+            <div class="icon">
+              <img src="img/rails.png" alt="rails" />
+              <p>Backbone</p>
+           </div>
+            <div class="icon">
+              <img src="img/css.png" alt="css" />
+              <p>CSS</p>
+           </div>
+            <div class="icon">
+              <img src="img/jquery.png" alt="jquery" />
+              <p>JQuery</p>
+           </div>
+            <div class="icon">
+              <img src="img/bootstrap.png" alt="bootstrap" />
+              <p>JQuery</p>
+           </div>
+            <div class="icon">
+              <img src="img/d3.png" alt="d3" />
+              <p>D3</p>
+           </div>
+            <div class="icon">
+              <img src="img/materialize.png" alt="materialize" />
+              <p>Materialize</p>
+           </div>
+            <div class="icon">
+              <img src="img/ajax.png" alt="ajax" />
+              <p>Materialize</p>
+           </div>
+            <div class="icon">
+              <img src="img/postgresql.png" alt="postgresql" />
+              <p>PostgreSQL</p>
+           </div>
+            <div class="icon underscore">
+              <img src="img/underscore.png" alt="underscore" />
+              <p>Underscore</p>
+           </div>
+        </div>
+  </div>
+  <div id="slide04" class="slide">
+                    <div class='contactsbox'>
                         <div class="contactsboxheading">Timothy Silva</div>
 
                         <div class="contactcontainer">
@@ -114,72 +220,19 @@
                             <div class="contactimage resume"></div>
                             <a class="contactheading" href='assets/TimSilvaResume.pdf' target='_blank'>Resume</a>
                         </div>
-
-                    </div>
-
-                    <div class='skillsbox' data-2200p='transform:rotateX(0deg);' data-2300p='transform:rotateX(90deg);' data-2400p='transform:rotateX(180deg);'>
-                        <div class="skillsboxheading">Skills</div>
-                        <div class="ruby icon"></div>
-                        <div class="js icon"></div>
-                        <div class="backbone icon"></div>
-                        <div class="html icon"></div>
-                        <div class="git icon"></div>
-                        <div class="react icon"></div>
-                        <div class="rails icon"></div>
-                        <div class="css icon"></div>
-                        <div class="jquery icon"></div>
-                        <div class="bootstrap icon"></div>
-                        <div class="d3 icon"></div>
-                        <div class="materialize icon"></div>
-                        <div class="ajax icon"></div>
-                        <div class="underscore icon"></div>
-                        <div class="postgresql icon"></div>
-                        <div class="icon list">
-                            <ul>
-                                <li>Ruby</li>
-                                <li>React</li>
-                                <li>D3</li>
-                            </ul>
-                        </div>
-                        <div class="icon list">
-                            <ul>
-                                <li>Javascript</li>
-                                <li>Rails</li>
-                                <li>Materialize</li>
-                            </ul>
-                        </div>
-                        <div class="icon list">
-                            <ul>
-                                <li>Backbone</li>
-                                <li>CSS</li>
-                                <li>AJax</li>
-                            </ul>
-                        </div>
-                        <div class="icon list">
-                            <ul>
-                                <li>HTML</li>
-                                <li>JQuery</li>
-                                <li>Underscore </li>
-                            </ul>
-                        </div>
-                        <div class="icon list">
-                            <ul>
-                                <li>Git</li>
-                                <li>Boostrap</li>
-                                <li>PostgreSQL</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+          </div>
     </div>
     <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/modernizr.custom.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/TweenMax.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/skrollr.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/skrollr.menu.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/ScrollMagic.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/animation.gsap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/debug.addIndicators.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/TimeLineMax.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/CSSRulePlugin.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/ScrollToPlugin.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/stars.js" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

@@ -1,376 +1,190 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald|Vesper+Libre');
+
 html, body {
-    margin: 0;
     font-family: 'Oswald', sans-serif;
+    min-width:320px;
+    margin:0;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-/* NAV BAR */
-
-nav {
-    height: 55px;
-    top: 0;
-    font-size: 20px;
-    position: fixed;
-    visibility: none;
-    z-index: 10;
-    width: 100%;
+canvas{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  opacity:0.3;
 }
 
-nav ul {
-    list-style: none;
+.slide{
+  width:100vw;
+  height:100vh;
 }
 
-nav li {
-    float: left;
-    padding: 0 10px;
+#slide00{
+  background-image: url("../img/nighttree.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(1.0,1.0);
+  transition: all 0.5s ease-out;
+  margin:0;
+  opacity:1;
 }
 
-nav a {
-    color: #666B6A;
+#slide01{
+  background-image: url("../img/texturedwall.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity:0;
 }
 
-nav a:hover {
-    color: #9DA0A0;
+#slide02{
+  background-image: url("../img/texturedwall2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align:center;
 }
 
-
-/* FIRST SECTION */
-
-.mainheading {
-    font-size: 5em;
-    color: white;
-    position: relative;
-    top: 25%;
+.portfolioHeading{
+  position:relative;
+  font-size:2.5em;
+  margin-bottom:50px;
+  top:10vh;
 }
 
-.secondaryheading {
-    font-size: 2.5em;
-    color: white;
-    position: relative;
-    top: 47%;
+.projectContainer{
+   height:400px;
+   width: 400px;
+   opacity:0;
+   margin-bottom:20px;
+   position:absolute;
+   background:gainsboro;
+   border-radius:50%;
+   -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
+   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
+}
+.portfolio.projectContainer{
+   height:250px;
+   width: 250px;
+   top:80px;
+   left:600px;
+   background:#8FA1C7;
+   z-index:5;
+}
+.vitamins.projectContainer{
+   top:80px;
+   left:120px;
+   background:ghostwhite;
+}
+.photo.projectContainer{
+   top:180px;
+   left:850px;
+   z-index:5;
+  background:gainsboro;
+}
+.tours.projectContainer{
+   top:370px;
+   left:450px;
+   z-index:4;
+  background:#A2B1CE;
+
+}
+.images{
+  position:relative;
+  height:180px;
+  width:250px;
+  display:block;
+  margin:0 auto;
+}
+
+.description{
+  position:relative;
+  height:180px;
+  width:300px;
+  display:block;
+  margin:0 auto;
+}
+
+.computer{
+  position:relative;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:3;
+}
+.projectHeading{
+ font-size: 1.3em;
+ margin-top:5px;
+ text-decoration:underline;
+}
+.projectimg{
+  position:absolute;
+  height:69%;
+  width:92%;
+  top:5%;
+  left:4%;
+  z-index:4;
+}
+
+#slide03{
+  background-image: url("../img/texturedwall.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#slide04{
+  background-image: url("../img/starrynight.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+ text-align:center;
+}
+
+.mainheading{
+    position:absolute;
+    top: 20vh;
+    left:0;
+    right:0;
+    font-size: 5vw;
+    color:white;
+    text-shadow: 3px 3px 2px rgba(2, 2, 2, 0.50);
+    text-align:center;
+	  letter-spacing: 3px;
+    animation-name: focus;
+    animation-duration: 4s;
+    animation-iteration-count:1;
+    animation-timing-function: linear;
+}
+
+.secondaryheading{
+    position:absolute;
+    top:32vh;
+    color:white;
+    font-size: 2.5vw;
     font-family: 'Vesper Libre', serif;
-}
-
-#profilepic {
-    background-image: url("../img/profilepic.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    -webkit-box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.60);
-    -moz-box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.60);
-    box-shadow: 0px 0px 23px -1px rgba(0, 0, 0, 0.60);
-    margin: 0 auto;
-}
-
-.about-heading {
-    position: fixed;
-    width: 100%;
-    color: black;
-    text-align: center;
-    font-size: 3em;
-    top: 100%;
-}
-
-.about-text {
-    position: fixed;
-    width: 70%;
-    color: black;
-    font-size: 1.3em;
-    top: 100%;
-    font-family: 'Vesper Libre', serif;
-    text-align: center;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.about-text p {
-    margin: 0;
-}
-
-.skills {
-    position: absolute;
-    top: 100%;
-    left: 0%;
-    background: url('../img/nighttree.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-}
-
-  .descriptions {
-      top: 60%;
-      width: 100%;
-      height: 30%;
-      position: absolute;
-      opacity: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
-      font-family: 'Vesper Libre', serif;
-  }
-  .portfolioheading {
-      position: absolute;
-      top: 10%;
-      font-size: 4em;
-      left: 50%;
-      transform: translate(-50%, 0);
-      opacity: 0;
-  }
-
-  .projects {
-      width: 30%;
-      height: 100%;
-      display: inline-block;
-  }
-
-  .projects h2 {
-      font-size: 1.5em;
-      margin: 0;
-  }
-
-@media screen and (max-width:959px) {
-    .mainheading {
-        font-size: 5em;
-        color: white;
-        position: relative;
-        top: 25%;
-    }
-    .secondaryheading {
-        font-size: 2.5em;
-        color: white;
-        position: relative;
-        top: 47%;
-        font-family: 'Vesper Libre', serif;
-    }
-    #profilepic {
-        width: 150px;
-        height: 150px;
-    }
-    .about-heading {
-        position: fixed;
-        width: 100%;
-        color: black;
-        text-align: center;
-        font-size: 3em;
-        top: 100%;
-    }
-    .about-text {
-        position: fixed;
-        width: 70%;
-        color: black;
-        font-size: 1.3em;
-        top: 100%;
-        font-family: 'Vesper Libre', serif;
-        text-align: center;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-}
-
-@media screen and (max-width:640px) {
-    .mainheading {
-        font-size: 4em;
-        color: white;
-        position: relative;
-        top: 30%;
-    }
-    .secondaryheading {
-        font-size: 2em;
-        color: white;
-        position: relative;
-        top: 48%;
-        font-family: 'Vesper Libre', serif;
-    }
-    #profilepic {
-        width: 150px;
-        height: 150px;
-    }
-    .about-heading {
-        position: fixed;
-        width: 100%;
-        color: black;
-        text-align: center;
-        font-size: 2.2em;
-        top: 100%;
-    }
-    .about-text {
-        position: fixed;
-        width: 80%;
-        color: black;
-        font-size: 1em;
-        top: 100%;
-        font-family: 'Vesper Libre', serif;
-        text-align: center;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-}
-
-@media screen and (max-width:375px) {
-    .mainheading {
-        font-size: 3.5em;
-        color: white;
-        position: relative;
-        top: 30%;
-    }
-    .secondaryheading {
-        font-size: 1.6em;
-        color: white;
-        position: relative;
-        top: 49%;
-        font-family: 'Vesper Libre', serif;
-    }
-    #profilepic {
-        width: 130px;
-        height: 130px;
-    }
-    .about-heading {
-        position: fixed;
-        width: 100%;
-        color: black;
-        text-align: center;
-        font-size: 2.5em;
-        top: 100%;
-    }
-    .about-text {
-        position: fixed;
-        width: 90%;
-        color: black;
-        font-size: 1em;
-        top: 100%;
-        font-family: 'Vesper Libre', serif;
-        text-align: center;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-  nav {
-      height: 55px;
-      top: 0;
-      font-size: 1em;
-      position: fixed;
-      visibility: none;
-      z-index: 10;
-      width: 100%;
-  }
-
-  nav ul {
-      list-style: none;
-  }
-
-  nav li {
-      float: left;
-      padding: 0 10px;
-  }
-
-  .descriptions {
-      top: 60%;
-      width: 100%;
-      height: 30%;
-      position: absolute;
-      opacity: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
-      font-size:0.5em;
-      font-family: 'Vesper Libre', serif;
-  }
-  .portfolioheading {
-      position: absolute;
-      top: 10%;
-      font-size: 2em;
-      left: 50%;
-      transform: translate(-50%, 0);
-      opacity: 0;
-  }
-
-}
-
-@media screen and (max-width:320px) {
-    .mainheading {
-        font-size: 3em;
-        color: white;
-        position: relative;
-        top: 30%;
-    }
-    .secondaryheading {
-        font-size: 1.5em;
-        color: white;
-        position: relative;
-        top: 49%;
-        font-family: 'Vesper Libre', serif;
-    }
-    #profilepic {
-        width: 120px;
-        height: 120px;
-    }
-    .about-heading {
-        position: fixed;
-        width: 100%;
-        color: black;
-        text-align: center;
-        font-size: 2em;
-        top: 100%;
-    }
-    .about-text {
-        position: fixed;
-        width: 90%;
-        color: black;
-        font-size: 0.8em;
-        top: 100%;
-        font-family: 'Vesper Libre', serif;
-        text-align: center;
-        left: 50%;
-        transform: translate(-50%, 0);
-    }
-  nav {
-      height: 55px;
-      top: 0;
-      font-size: 0.7em;
-      position: fixed;
-      visibility: none;
-      z-index: 10;
-      width: 100%;
-  }
-
-  nav ul {
-      list-style: none;
-  }
-
-  nav li {
-      float: left;
-      padding: 0 10px;
-  }
-  .descriptions {
-      top: 60%;
-      width: 100%;
-      height: 30%;
-      position: absolute;
-      opacity: 0;
-      left: 50%;
-      transform: translate(-50%, 0);
-      font-size:0.5em;
-      font-family: 'Vesper Libre', serif;
-  }
-
-  .portfolioheading {
-      position: absolute;
-      top: 10%;
-      font-size: 2em;
-      left: 50%;
-      transform: translate(-50%, 0);
-      opacity: 0;
-  }
-
+    text-shadow: 2px 2px 2px rgba(2, 2, 2, 0.50);
+    text-align:center;
+    left:0;
+    right:0;
+ 	  letter-spacing: 1px;
+    animation-name: focussmall;
+    animation-duration: 5s;
+    animation-iteration-count:1;
+    animation-timing-function: linear;
 }
 
 .mousescroll {
     top: 95%;
-    /* margin:0 auto; */
+    margin:0 auto;
     position: fixed;
-    z-index: 10;
+    z-index: 99;
     height: 4%;
     width: 4%;
     left: 48.5%;
@@ -382,139 +196,165 @@ nav a:hover {
 }
 
 
-/* ABOUT SECTION */
+/*=============================================================================
+ ANIMATIONS
+ ============================================================================== */
 
-.about-text span {
-    /* font-size:1.2em; */
-    font-weight: bold;
+  @keyframes focus {
+  0% {
+    text-shadow:0 0 20px white, 2px 2px 2px rgba(2, 2, 2, 0.50);
+    letter-spacing:20px;
+  }
+  50% {
+    text-shadow:0 0 0 white, 2px 2px 2px rgba(2, 2, 2, 0.50);
+    font-size:5vw;
+    letter-spacing:3px;
+  }
+  75% {
+    text-shadow:0 0 0 white, 2px 2px 2px rgba(2, 2, 2, 0.50);
+    font-size:5vw;
+    letter-spacing:3px;
+  }
+  100% {
+    text-shadow:0 0 0 white, 2px 2px 2px rgba(2, 2, 2, 0.50);
+    font-size:5vw;
+    letter-spacing:3px;
+  }
 }
 
-//DEFAULT FRAME
-.frame {
-    width: 100%;
-    height: 100%;
+@keyframes focussmall {
+  0% {
+    text-shadow:0 0 20px white, 2px 2px 2px rgba(2, 2, 2, 0.50);
+    letter-spacing:20px;
+  }
+  50% {
+    text-shadow:0 0 0 white, 2px 2px 2px rgba(2, 2, 2, 0.50);
+    font-size:2.5vw;
+    letter-spacing:1px;
+  }
+  75% {
+    text-shadow:0 0 0 white, 2px 2px 2px rgba(2, 2, 2, 0.50);
+    font-size:2.5vw;
+    letter-spacing:1px;
+  }
+  100% {
+    text-shadow:0 0 0 white, 2px 2px 2px rgba(2, 2, 2, 0.50);
+    font-size:2.5vw;
+    letter-spacing:1px;
+  }
+
 }
 
-.frame1 {
+.project {
+    text-align: center;
     position: fixed;
-    top: 0px;
-    background-image: url("../img/nighttree.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    top: 45%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+.project-image,
+.project-image img,
+.project-image:before,
+.project-image:after {
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+            width:150px;
+            height:150px;
+}
+.project-image:before {
+    content: '';
+    display: block;
     width: 100%;
     height: 100%;
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-    opacity: 1;
-    text-align: center;
-}
-
-.frame2 {
-    position: fixed;
-    top: 0px;
-    background: #A0B1C2;
-    opacity: 0;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-}
-
-.tours {
-    background: url('../img/craftytours.png');
-}
-
-.vitamins {
-    background: url('../img/vitamins.png');
-}
-
-.photos {
-    background: url('../img/photos.png');
-    -webkit-box-shadow: 0px 0px 35px 1px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0px 0px 35px 1px rgba(0, 0, 0, 1);
-    box-shadow: 0px 0px 35px 1px rgba(0, 0, 0, 1);
-    transform: translate(-50%, 0);
-}
-
-.tours, .vitamins, .photos {
-    border: 4px solid white;
     position: absolute;
-    overflow: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    top: 10%;
-    width: 30%;
-    height: 30%;
-    display: inline-block;
-    border-radius: 10px;
+    background-color: rgba(89,99,132,0.8);
+    top: -5px;
+    left: -5px;
+    z-index: 2;
 }
-
-/* .portfolioheading { */
-/*     position: absolute; */
-/*     top: 10%; */
-/*     font-size: 4em; */
-/*     left: 50%; */
-/*     transform: translate(-50%, 0); */
-/*     opacity: 0; */
-/* } */
-
-/* .descriptions { */
-/*     top: 60%; */
-/*     width: 100%; */
-/*     height: 30%; */
-/*     position: absolute; */
-/*     opacity: 0; */
-/*     left: 50%; */
-/*     transform: translate(-50%, 0); */
-/*     font-family: 'Vesper Libre', serif; */
-/* } */
-
-.projects {
-    width: 30%;
-    height: 100%;
-    display: inline-block;
-}
-
-.projects h2 {
-    font-size: 1.5em;
-    margin: 0;
-}
-
-.projects p {
-    margin: 0;
-}
-
-.project2 {
-    margin-left: 1.7%;
-    margin-right: 1.7%;
-}
-
-.skills {
-    position: absolute;
-    top: 100%;
-    left: 0%;
-    background: url('../img/nighttree.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.project-image:after {
+    content: '';
+    display: block;
     width: 100%;
     height: 100%;
+    position: absolute;
+    background-color: rgba(5,0,76,0.3);
+    bottom: -6px;
+    right: -6px;
+    z-index: 3;
+}
+.project-image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    z-index: 5;
+}
+.project-image img {
+    position:relative;
+    z-index: 4;
+    display: block;
+}
+.project-title {
+    position:relative;
+    text-transform: uppercase;
+    color:white;
+    font-size: 30px;
+    margin: 20px 0 0 0;
+}
+.project-paragraph {
+    position:relative;
+    font-size: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
-.skillsboxheading, .contactsboxheading {
-    font-size: 3em;
-    text-align: center;
+.project-pixels {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -100%);
 }
+.pixel {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(242,236,29,0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-border-radius: 100%;
+            border-radius: 100%;
+    z-index: 3;
+}
+.pixel01 {left: 60px; top: -110px}
+.pixel02 {left: 86px; top: -84px}
+.pixel03 {left: 80px; top: -70px}
+.pixel04 {left: 71px; top: -30px}
+.pixel05 {left: 80px; top: -10px}
+.pixel06 {left: 105px; top: -50px}
+.pixel07 {left: 120px; top: -70px}
+.pixel08 {left: 110px; top: -20px}
+.pixel09 {left: 139px; top: -25px}
+.pixel10 {left: 137px; top: -67px}
+.pixel11 {left: -110px; top: -50px}
+.pixel12 {left: -90px; top: -110px}
+.pixel13 {left: -96px; top: -94px}
+.pixel14 {left: -110px; top: -70px}
+.pixel15 {left: -111px; top: -50px}
+.pixel16 {left: -85px; top: 0px}
+.pixel17 {left: -125px; top: -60px}
+.pixel18 {left: -120px; top: -50px}
+.pixel19 {left: -150px; top: -30px}
+.pixel20 {left: -141px; top: -35px}
+.pixel21 {left: -153px; top: -67px}
+.pixel22 {left: -100px; top: -60px}
+.sizeS {width: 5px; height: 5px; background-color: #48629B;}
+.sizeL {width: 10px; height: 10px; background-color: #7B90BB;}
+.sizeXL {width: 20px; height: 20px; background-color: #C3CFE7;}
 
-.skillsboxheading {
-    padding-top: 2%;
-}
-
-.contactsboxheading {
-    padding-top: 10%;
-}
 
 .container {
     width: 50%;
@@ -524,153 +364,57 @@ nav a:hover {
     perspective: 50%;
 }
 
-@media screen and (max-width:959px) {
-    .container {
-        width: 50%;
-        height: 70%;
-        position: relative;
-        margin: 0 auto;
-        perspective: 50%;
-    }
+/* Skills box */
+.skillsboxheading{
+  font-size:4em;
+  color:white;
+  position:relative;
+  top:10%;
+  text-align:center;
+}
+.skillsbox{
+ width:80vw;
+ height:80vh;
+ position:relative;
+ top:10%;
+ margin:0 auto;
 }
 
-@media screen and (max-width:640px) {
-    .container {
-        width: 90%;
-        height: 80%;
-        position: relative;
-        margin: 0 auto;
-        perspective: 50%;
-    }
+.icon{
+ text-align:center;
+ display: inline-block;
+ color: white;
+ margin:10px 50px;
+ position:relative;
 }
 
-@media screen and (max-width:375px) {
-    .container {
-        width: 90%;
-        height: 80%;
-        position: relative;
-        margin: 0 auto;
-        perspective: 50%;
-    }
+.icon img{
+ width:120px;
+ height:120px;
 }
+.underscore img{
+ height:40px;
 
-@media screen and (max-width:320px) {
-    .container {
-        width: 90%;
-        height: 80%;
-        position: relative;
-        margin: 0 auto;
-        perspective: 50%;
-    }
 }
-
-#card {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transform-style: preserve-3d;
-    transform-origin: center top;
-}
-
-.contactsbox, .skillsbox {
-    margin: 0;
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 40px;
-    -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
-}
-
-.contactsbox {
-    background: #162E44;
-}
-
-.skillsbox {
-    background: #A0B1C2;
-}
-
-.html {
-    background: url('../img/html5.png');
-}
-
-.css {
-    background: url('../img/css3.png');
-}
-
-.js {
-    background: url('../img/js.png');
-}
-
-.ruby {
-    background: url('../img/ruby.png');
-}
-
-.backbone {
-    background: url('../img/backbone.png');
-}
-
-.react {
-    background: url('../img/react.png');
-}
-
-.angular {
-    background: url('../img/angular.png');
-}
-
-.rails {
-    background: url('../img/rails.png');
-}
-
-.git {
-    background: url('../img/git.svg');
-}
-
-.jquery {
-    background: url('../img/jquery.png');
-}
-
-.d3 {
-    background: url('../img/d3.png');
-}
-
-.materialize {
-    background: url('../img/materialize.png');
-}
-
-.ajax {
-    background: url('../img/ajax.png');
-}
-
-.underscore {
-    background: url('../img/underscore.png');
-}
-
-.bootstrap {
-    background: url('../img/bootstrap.png');
-}
-
-.postgresql {
-    background: url('../img/postgresql.png');
-}
-
-.skillsboxheading, .contactsboxheading {
-    font-size: 3em;
-    color: white;
-}
-
 
 /* CONTACT BOX */
-
-.contactsboxheading {
-    margin-bottom: 20px;
+.contactsbox {
+    position:relative;
+    background: #162E44;
+    border-radius: 40px;
+    width: 35%;
+    height: 60%;
+    margin:0 auto;
+    top: 15%;
+    -webkit-box-shadow: 2px 5px 30px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 5px 30px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 5px 30px 1px rgba(0, 0, 0, 0.75);
+    color: white;
 }
 
-.contactsbox {
-    color: white;
+.contactsboxheading {
+    font-size:4em;
+    margin-bottom: 20px;
 }
 
 .github {
@@ -725,26 +469,405 @@ nav a:hover {
     color: white;
 }
 
-.icon {
-    width: 17%;
-    height: 17%;
-    display: inline-block;
-    padding-top: 4%;
-    margin-top: 5px;
+
+/*=============================================================================
+ MEDIA QUERIES
+ ============================================================================== */
+@media screen and (max-width:1300px) {
+
+ .images{
+    height:170px;
+    width:220px;
+  }
+.portfolioHeading{
+  font-size:2em;
+  margin-bottom:5px;
+  top:8vh;
+}
+.description{
+  height:180px;
+  width:300px;
+  font-size:12px;
+}
+.projectContainer{
+   height:350px;
+   width: 350px;
+   opacity:1;
+   margin-bottom:20px;
+   /* position:relative; */
+   position:absolute;
+   background:gainsboro;
+   border-radius:50%;
+   -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
+   -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
+   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
+}
+.portfolio.projectContainer{
+   height:200px;
+   width: 200px;
+   top:80px;
+   left:520px;
+   background:#8FA1C7;
+}
+.vitamins.projectContainer{
+   top:80px;
+   left:110px;
+   background:ghostwhite;
+}
+.photo.projectContainer{
+   top:170px;
+   left:750px;
+   z-index:5;
+  background:gainsboro;
+}
+.tours.projectContainer{
+   top:320px;
+   left:400px;
+   z-index:6;
+  background:#A2B1CE;
+
+}
+.contactsbox {
+    width: 40%;
+    height: 70%;
+    top: 15%;
+}
+.icon img{
+ width:100px;
+ height:100px;
+}
+.underscore img{
+ height:40px;
+}
+.icon{
+ margin:8px 50px;
+}
+
+}
+
+@media screen and (max-width:768px) {
+  .mainheading{
+    font-size: 10vw;
+    animation:none;
+  }
+  .secondaryheading {
+    font-size: 5vw;
+    animation:none;
+  }
+.portfolio.projectContainer{
+   height:160px;
+   width: 160px;
+   top:80px;
+   left:500px;
+   background:#8FA1C7;
+}
+  .portfolioHeading{
+    font-size:2em;
+    top:60px;
+  }
+.vitamins.projectContainer{
+   height:400px;
+   width: 400px;
+   top:100px;
+   left:150px;
+   background:ghostwhite;
+}
+.photo.projectContainer{
+   height:400px;
+   width: 400px;
+   top:350px;
+   left:320px;
+  background:gainsboro;
+}
+.tours.projectContainer{
+   height:400px;
+   width: 400px;
+   top:600px;
+   left:300px;
+  background:#A2B1CE;
+
+}
+
+.contactsbox {
+    width: 70%;
+    height: 60%;
+    top: 15%;
+}
+.skillsboxheading{
+  font-size:3em;
+  top:8%;
+}
+
+.icon{
+ margin:0 50px;
+}
+.skillsbox{
+ width:80vw;
+ height:80vh;
+ top:10%;
+}
+
+
+}
+
+@media screen and (max-width:414px) {
+  #slide02{
+   height:200vh;
+  }
+  .mainheading{
+    font-size: 13vw;
+    animation:none;
+  }
+  .secondaryheading {
+    font-size: 6vw;
+    animation:none;
+  }
+  .project-image, .project-image img{
+    width:115px;
+    height:115px;
+  }
+  .project-title {
+    font-size: 30px;
+    margin: 10px 0 0 0;
+  }
+ .project-paragraph {
+    font-size: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+ }
+.portfolio.projectContainer{
+   height:120px;
+   width: 120px;
+   top:30px;
+   left:120px;
+   background:#8FA1C7;
+}
+  .portfolioHeading{
+    font-size:1.4em;
+    top:40px;
+  }
+.vitamins.projectContainer{
+   height:320px;
+   width: 320px;
+   top:180px;
+   left:28px;
+   background:ghostwhite;
+}
+.photo.projectContainer{
+   height:320px;
+   width: 320px;
+   top:550px;
+   left:28px;
+   z-index:5;
+  background:gainsboro;
+}
+.tours.projectContainer{
+   height:320px;
+   width: 320px;
+   top:930px;
+   left:28px;
+   z-index:4;
+  background:#A2B1CE;
+
+}
+  .images{
+  width:80%;
+  height:50%;
+  }
+
+.description{
+  height:230px;
+  width:80%;
+}
+.contactsboxheading{
+  position:relative;
+  font-size:2.5em;
+  top:5%;
+  margin-bottom:10%;
+}
+.contactsbox {
+    width: 80%;
+    height: 70%;
+    top: 30%;
+    left:-10px;
+}
+.mousescroll {
+    top: 90%;
+    margin:0 auto;
+    position: fixed;
+    z-index: 99;
+    height: 10%;
+    width: 6%;
+    left: 45%;
+    background: url('../img/down.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    color: white;
+    opacity: 0.4;
 }
 
-.icon ul {
-    list-style: none;
-    margin: 0;
-    font-size: 0.6em;
-    text-align: center;
-    padding: 0;
+.skillsbox{
+ width:90vw;
+ height:90vh;
+ top:10%;
 }
 
-.list {
-    padding-top: 0;
+.skillsboxheading{
+  font-size:2em;
+  top:8%;
 }
+
+.icon{
+ text-align:center;
+ display: inline-block;
+ color: white;
+ margin:0px 20px;
+ position:relative;
+}
+.icon p{
+margin-top:5px;
+margin-bottom:5px;
+
+}
+.icon img{
+ width:60px;
+ height:60px;
+}
+.underscore img{
+ height:40px;
+
+}
+
+
+.pixel01 {left: 40px; top: -70px;}
+.pixel02 {left: 58px; top: -58px;}
+.pixel03 {left: 80px; top: -70px;}
+.pixel04 {left: 85px; top: -30px;}
+.pixel05 {left: 69px; top: 0px;}
+.pixel06 {left: 90px; top: -50px;}
+.pixel07 {left: 96px; top: -48px;}
+.pixel08 {left: 110px; top: -20px;}
+.pixel09 {left: 124px; top: -36px;}
+.pixel10 {left: 111px; top: -8px;}
+.pixel11 {left: -110px; top: -10px;}
+.pixel12 {left: -60px; top: -60px;}
+.pixel13 {left: -76px; top: -51px;}
+.pixel14 {left: -86px; top: -57px;}
+.pixel15 {left: -90px; top: -4px;}
+.pixel16 {left: -65px; top:  -20px;}
+.pixel17 {left: -105px; top: -50px;}
+.pixel18 {left: -100px; top: -20px;}
+.pixel19 {left: -130px; top: -10px;}
+.pixel20 {left: -121px; top: -5px;}
+.pixel21 {left: -133px; top: -37px;}
+.pixel22 {left: -80px; top: -30px;}
+
+}
+@media screen and (max-width:320px) {
+  #slide02{
+   height:230vh;
+  }
+  .mainheading{
+    font-size: 13vw;
+    left:0;
+    top: 20vh;
+    animation:none;
+  }
+  .secondaryheading {
+    font-size: 6vw;
+    top:32vh;
+    left:0;
+    animation:none;
+  }
+  .project-image, .project-image img{
+    width:100px;
+    height:100px;
+  }
+  .project-title {
+    font-size: 20px;
+    margin: 10px 0 0 0;
+  }
+  .project-paragraph {
+      font-size: 13px;
+      margin-left: 15px;
+      margin-right: 15px;
+  }
+  .portfolioHeading{
+    font-size:1.4em;
+    top:40px;
+  }
+.portfolio.projectContainer{
+   height:120px;
+   width: 120px;
+   top:30px;
+   left:100px;
+   background:#8FA1C7;
+}
+
+.vitamins.projectContainer{
+   height:300px;
+   width: 300px;
+   top:180px;
+   background:ghostwhite;
+}
+.photo.projectContainer{
+   height:300px;
+   width: 300px;
+   top:550px;
+   z-index:5;
+  background:gainsboro;
+}
+.tours.projectContainer{
+   height:300px;
+   width: 300px;
+   top:930px;
+   z-index:4;
+  background:#A2B1CE;
+
+}
+  .images{
+  width:80%;
+  height:50%;
+  }
+
+.description{
+  height:230px;
+  width:80%;
+}
+.contactsbox {
+    width: 90%;
+    height: 80%;
+    top: 10%;
+    left:1px;
+}
+.mousescroll {
+    left: 48%;
+}
+
+.skillsboxheading{
+  font-size:2em;
+  top:5%;
+}
+.skillsbox{
+ width:100vw;
+ height:100vh;
+ position:relative;
+ top:8%;
+ margin:0 auto;
+ left:  20px;
+}
+
+.icon{
+ margin:0px 15px;
+}
+.icon p{
+margin-top:0;
+}
+.underscore img{
+ height:20px;
+}
+
+}
+
+
+

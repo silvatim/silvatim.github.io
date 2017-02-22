@@ -7,7 +7,6 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
-
 canvas{
   position:absolute;
   top:0;
@@ -38,7 +37,7 @@ canvas{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  opacity:0;
+  opacity:1;
 }
 
 #slide02{
@@ -144,7 +143,7 @@ canvas{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
- text-align:center;
+  text-align:center;
 }
 
 .mainheading{
@@ -247,12 +246,13 @@ canvas{
 
 .project {
     text-align: center;
-    position: fixed;
+    position:relative;
+    /* position: fixed; */
     top: 45%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    transform: translateY(-50%);
+    /* left: 0; */
+    /* bottom: 0; */
+    /* right: 0; */
+    /* transform: translateY(-50%); */
 }
 .project-image,
 .project-image img,
@@ -428,7 +428,6 @@ canvas{
 .email {
     background: url('../img/email.png');
 }
-
 .phone {
     background: url('../img/phone.png');
 }
@@ -508,23 +507,27 @@ canvas{
    top:80px;
    left:520px;
    background:#8FA1C7;
+   opacity:0;
 }
 .vitamins.projectContainer{
    top:80px;
    left:110px;
    background:ghostwhite;
+   opacity:0;
 }
 .photo.projectContainer{
    top:170px;
    left:750px;
    z-index:5;
   background:gainsboro;
+   opacity:0;
 }
 .tours.projectContainer{
    top:320px;
    left:400px;
    z-index:6;
   background:#A2B1CE;
+   opacity:0;
 
 }
 .contactsbox {

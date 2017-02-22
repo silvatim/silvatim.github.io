@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
     $("#nav-mobile").html($("#nav-main").html());
-
     $("#nav-trigger span").click(function(){
         if ($("nav#nav-mobile ul").hasClass("expanded")) {
             $("nav#nav-mobile ul.expanded").removeClass("expanded").slideUp(250);
@@ -26,31 +25,34 @@ $(document).ready(function(){
 
   //TimelineMax Tweens
   var fadeFirstToSecond = new TimelineMax()
-    .fromTo('#slide00', 0.5, {autoAlpha:1}, {autoAlpha:0, ease:Power0.easeNone}, 0.5)
-    .fromTo('#slide01', 0.5, {autoAlpha:0},  {autoAlpha:1, y:-$(window).height()}, 0.5 )
-    .fromTo($projectImage, 1, {autoAlpha:0, yPercent:'-200'}, {autoAlpha:1, yPercent:'10', ease:Power2.easeInOut}, 0.5)
+    // .fromTo('#slide00', 0.5, {autoAlpha:1}, {autoAlpha:0, ease:Power0.easeNone}, 0.5)
+    // .fromTo('#slide01', 0.5, {autoAlpha:0},  {autoAlpha:1, y:-$(window).height()}, 0.5 )
+    // .fromTo('#slide01', 0.5, {autoAlpha:0},  {autoAlpha:1}, 0.5 )
+    .fromTo($projectImage, 0.5, {autoAlpha:0, yPercent:'-200'}, {autoAlpha:1, yPercent:'100', ease:Power2.easeInOut}, 0.5)
     .add('imageIn')
-     .staggerFromTo($pixel, 0.3, {autoAlpha: 0, x: '-=10'}, {autoAlpha: 1, x: '0', ease:Power4.easeInOut}, 0.02, '-=0.2')
-     .add('pixelsIn')
-     .fromTo($projectTitle, 0.5, {autoAlpha:0, yPercent:'150'}, { autoAlpha:1, yPercent:'20', ease:Power2.easeInOut}, 0.8)
-     .fromTo($projectParagraph, 0.5, {autoAlpha:0, yPercent:'150'}, { autoAlpha:1, yPercent:'0', ease:Power2.easeInOut}, 0.8);
-
+    .staggerFromTo($pixel, 0.3, {autoAlpha: 0, x: '-=10'}, {autoAlpha: 1, x: '0', ease:Power4.easeInOut}, 0.02, '-=0.2')
+    .add('pixelsIn')
+    .fromTo($projectTitle, 0.5, {autoAlpha:0, yPercent:'150'}, { autoAlpha:1, yPercent:'330', ease:Power2.easeInOut}, 0.5)
+    .fromTo($projectParagraph, 0.5, {autoAlpha:0, yPercent:'50'}, { autoAlpha:1, yPercent:'80', ease:Power2.easeInOut}, 0.5);
 
   // Init ScrollMagic
   var controller = new ScrollMagic.Controller();
 
- // Fade out first scene
+//  Fade out first scene
   var pinFirstScene = new ScrollMagic.Scene({
+    triggerElement:'#slide00',
     triggerHook:0,
   })
-  .setPin("#slide00")
+  .setPin("#slide00", {pushFollowers:false})
   // .addIndicators({name:"pin first scene"})
   .addTo(controller);
-
-  //  Pin Second Scene
+  //
+   // Pin Second Scene
   var pinSecondScene = new ScrollMagic.Scene({
+    triggerElement:'#slide01',
     triggerHook:0,
-    duration:'100%',
+    // ******
+    // duration:'100%',
     // duration:$(window).height(),
   })
   .setPin('#slide01', {pushFollowers:false})
@@ -58,32 +60,26 @@ $(document).ready(function(){
   .addTo(controller);
 
   var firstSceneFadeToSecond = new ScrollMagic.Scene({
-    triggerHook:0,
-    offset:1,
+    triggerElement:"#slide01",
+    triggerHook:0.2,
+    reverse:false,
+    // offset:1,
   })
   .setTween(fadeFirstToSecond)
   // .addIndicators({name:"fade first scene to second"})
   .addTo(controller);
 
- firstSceneFadeToSecond.on("end", function(event){
-  console.log("ended Scene");
- });
-
 //only change from here
-
-firstSceneFadeToSecond.on("after", function(event){
-  console.log("leaving");
-});
-
 
   var pinThirdScene = new ScrollMagic.Scene({
     triggerElement:"#slide02",
     triggerHook:0,
     // offset:1000,
-    duration:$(window).height(),
+    // ********
+    // duration:$(window).height(),
 
   })
-  .setPin("#slide02", {pushFollowers:true})
+  .setPin("#slide02", {pushFollowers:false})
   // .addIndicators({name:"pin third scene"})
   .addTo(controller);
 
@@ -104,19 +100,19 @@ firstSceneFadeToSecond.on("after", function(event){
   var $width = $(window).width();
     switch (true) {
       case $width > 1300:
-      slideInProjects.fromTo($vitamins, 1, {autoAlpha:0, left:'-500px'}, { autoAlpha:1, left:'130px', ease:Power1.easeInOut}, 0.8);
-      slideInProjects.fromTo($photo, 1, {autoAlpha:0,  left:'1200px'}, { autoAlpha:1,  left:'850px', ease:Power1.easeInOut}, 1.2);
-      slideInProjects.fromTo($tours, 1, {autoAlpha:0, left:'-300px'}, { autoAlpha:1, left:'450px', ease:Power1.easeInOut}, 1.6);
+      slideInProjects.fromTo($vitamins, 0.5, {autoAlpha:0, left:'-500px'}, { autoAlpha:1, left:'130px', ease:Power1.easeInOut}, 0.8);
+      slideInProjects.fromTo($photo, 0.5, {autoAlpha:0,  left:'1200px'}, { autoAlpha:1,  left:'850px', ease:Power1.easeInOut}, 0.8);
+      slideInProjects.fromTo($tours, 0.5, {autoAlpha:0, left:'-300px'}, { autoAlpha:1, left:'450px', ease:Power1.easeInOut}, 0.8);
       break;
       case $width > 768:
       slideInProjects.fromTo($vitamins, 0.5, {autoAlpha:0, left:'-200px'}, { autoAlpha:1, left:'130px', ease:Power2.easeInOut}, 0.8);
-      slideInProjects.fromTo($photo, 0.5, {autoAlpha:0,left:'1200px'}, { autoAlpha:1, left:'750px', ease:Power2.easeInOut}, 1.2);
-      slideInProjects.fromTo($tours, 0.5, {autoAlpha:0, left:'-300px'}, { autoAlpha:1, left:'400px', ease:Power2.easeInOut}, 1.6);
+      slideInProjects.fromTo($photo, 0.5, {autoAlpha:0,left:'1200px'}, { autoAlpha:1, left:'750px', ease:Power2.easeInOut}, 0.8);
+      slideInProjects.fromTo($tours, 0.5, {autoAlpha:0, left:'-300px'}, { autoAlpha:1, left:'400px', ease:Power2.easeInOut}, 0.8);
       break;
       case $width > 414:
       slideInProjects.fromTo($vitamins, 0.5, {autoAlpha:0, left:'-300px'}, { autoAlpha:1, left:'28px', ease:Power2.easeInOut}, 0.8);
-      slideInProjects.fromTo($photo, 0.5, {autoAlpha:0, right:'-800px'}, { autoAlpha:1, right:'28px', ease:Power2.easeInOut}, 1.2);
-      slideInProjects.fromTo($tours, 0.5, {autoAlpha:0, left:'-300px'}, { autoAlpha:1, left:'28px', ease:Power2.easeInOut}, 1.6);
+      slideInProjects.fromTo($photo, 0.5, {autoAlpha:0, right:'-800px'}, { autoAlpha:1, right:'28px', ease:Power2.easeInOut}, 0.8);
+      slideInProjects.fromTo($tours, 0.5, {autoAlpha:0, left:'-300px'}, { autoAlpha:1, left:'28px', ease:Power2.easeInOut}, 0.8);
       break;
       case $width > 320:
       slideInProjects.fromTo($vitamins, 0.5, {autoAlpha:0, left:'-300px'}, { autoAlpha:1, left:'15px', ease:Power2.easeInOut}, 0.8);
@@ -132,6 +128,7 @@ firstSceneFadeToSecond.on("after", function(event){
 
   var projectSlide = new ScrollMagic.Scene({
    triggerElement:"#slide02",
+   reverse:false,
    })
   .setTween(slideInProjects)
   // .addIndicators({name:"Slide in projects"})
@@ -140,22 +137,33 @@ firstSceneFadeToSecond.on("after", function(event){
   var pinFourthScene = new ScrollMagic.Scene({
     triggerElement:"#slide03",
     triggerHook:0,
-    duration:$(window).height(),
+    // **********
+    // duration:$(window).height(),
   })
-  .setPin("#slide03", {pushFollowers:true})
+  .setPin("#slide03")
   // .addIndicators({name:"pin third scene"})
   .addTo(controller);
 
-
   var skillsAnimation = new TimelineMax()
-      .staggerFrom(".icon", 3, {scale: 0.5, opacity:0, delay:0.5, ease:Elastic.easeOut}, 0.1);
+      .staggerFrom(".icon", 2, {scale: 0.5, opacity:0, delay:0.5, ease:Elastic.easeOut}, 0.1);
 
  var popInSkills = new ScrollMagic.Scene({
     triggerElement:"#slide03",
-    triggerHook:0,
+    triggerHook:0.2,
+    reverse:false,
   })
   .setTween(skillsAnimation)
   // .addIndicators({name:"in skills"})
+  .addTo(controller);
+
+  var pinFifthScene = new ScrollMagic.Scene({
+    triggerElement:"#slide04",
+    triggerHook:0,
+    // **********
+    // duration:$(window).height(),
+  })
+  .setPin("#slide04")
+  // .addIndicators({name:"pin third scene"})
   .addTo(controller);
 
  var slideContact = new TimelineMax()
@@ -164,7 +172,8 @@ firstSceneFadeToSecond.on("after", function(event){
 
   var slideUpContact = new ScrollMagic.Scene({
     triggerElement:"#slide04",
-    triggerHook:0.1,
+    triggerHook:0.2,
+    reverse:false,
   })
   .setTween(slideContact)
   // .addIndicators({name:"slide Contact"})

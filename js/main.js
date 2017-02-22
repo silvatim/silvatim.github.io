@@ -18,10 +18,6 @@ $(document).ready(function(){
   headroom.init();
 
 
-
-
-
-
   //Page Variables
   var $project = $('.project'),
       $projectImageBefore = CSSRulePlugin.getRule(".project-image:before"),

@@ -10,8 +10,11 @@
 nav {
     font-size: 20px;
     position: fixed;
-    visibility: none;
+    /* visibility: none; */
     z-index: 9999;
+    /* background:rgba(0,0,0, 0.5); */
+    width:100vw;
+    height:10vh;
 }
 nav ul {
     list-style: none;
@@ -22,7 +25,7 @@ nav li {
 nav a {
 	position: relative;
 	display: inline-block;
-	margin: 20px 10px;
+	margin: 0px 10px;
 	outline: none;
   color:#2F395E;
 	text-decoration: none;
@@ -37,6 +40,11 @@ nav a:focus {
 	outline: none;
   color:white;
 }
+.focus {
+	outline: none;
+  color:white;
+}
+
 /* Effect 12: circle */
 #nav-main a::before,
 #nav-main a::after {

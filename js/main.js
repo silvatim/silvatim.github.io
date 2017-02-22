@@ -42,8 +42,9 @@ $(document).ready(function(){
   var pinFirstScene = new ScrollMagic.Scene({
     triggerElement:'#slide00',
     triggerHook:0,
+    duration:100,
   })
-  .setPin("#slide00", {pushFollowers:false})
+  .setPin("#slide00", {pushFollowers:true})
   // .addIndicators({name:"pin first scene"})
   .addTo(controller);
   //
@@ -51,11 +52,12 @@ $(document).ready(function(){
   var pinSecondScene = new ScrollMagic.Scene({
     triggerElement:'#slide01',
     triggerHook:0,
+    duration:100,
     // ******
     // duration:'100%',
     // duration:$(window).height(),
   })
-  .setPin('#slide01', {pushFollowers:false})
+  .setPin('#slide01', {pushFollowers:true})
   // .addIndicators({name:"setting pin"})
   .addTo(controller);
 
@@ -74,12 +76,13 @@ $(document).ready(function(){
   var pinThirdScene = new ScrollMagic.Scene({
     triggerElement:"#slide02",
     triggerHook:0,
+    duration:100,
     // offset:1000,
     // ********
     // duration:$(window).height(),
 
   })
-  .setPin("#slide02", {pushFollowers:false})
+  .setPin("#slide02", {pushFollowers:true})
   // .addIndicators({name:"pin third scene"})
   .addTo(controller);
 
@@ -137,10 +140,11 @@ $(document).ready(function(){
   var pinFourthScene = new ScrollMagic.Scene({
     triggerElement:"#slide03",
     triggerHook:0,
+    duration:100,
     // **********
     // duration:$(window).height(),
   })
-  .setPin("#slide03")
+  .setPin("#slide03", {pushFollowers:true})
   // .addIndicators({name:"pin third scene"})
   .addTo(controller);
 
@@ -199,6 +203,7 @@ $(document).on("click", "a[href^='#']", function (e) {
     }
   }
 	});
+
 
 });
 

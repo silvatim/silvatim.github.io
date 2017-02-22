@@ -10,6 +10,18 @@ $(document).ready(function(){
         }
     });
 
+  // grab an element
+  var myElement = document.querySelector("#nav-main");
+  // construct an instance of Headroom, passing the element
+  var headroom  = new Headroom(myElement);
+  // initialise
+  headroom.init();
+
+
+
+
+
+
   //Page Variables
   var $project = $('.project'),
       $projectImageBefore = CSSRulePlugin.getRule(".project-image:before"),
@@ -42,7 +54,7 @@ $(document).ready(function(){
   var pinFirstScene = new ScrollMagic.Scene({
     triggerElement:'#slide00',
     triggerHook:0,
-    duration:100,
+    duration:300,
   })
   .setPin("#slide00", {pushFollowers:true})
   // .addIndicators({name:"pin first scene"})
@@ -52,7 +64,7 @@ $(document).ready(function(){
   var pinSecondScene = new ScrollMagic.Scene({
     triggerElement:'#slide01',
     triggerHook:0,
-    duration:100,
+    duration:800,
     // ******
     // duration:'100%',
     // duration:$(window).height(),
@@ -64,7 +76,8 @@ $(document).ready(function(){
   var firstSceneFadeToSecond = new ScrollMagic.Scene({
     triggerElement:"#slide01",
     triggerHook:0.3,
-    reverse:false,
+    reverse:true,
+    // reverse:false,
     // offset:1,
   })
   .setTween(fadeFirstToSecond)
@@ -76,7 +89,7 @@ $(document).ready(function(){
   var pinThirdScene = new ScrollMagic.Scene({
     triggerElement:"#slide02",
     triggerHook:0,
-    duration:100,
+    duration:800,
     // offset:1000,
     // ********
     // duration:$(window).height(),
@@ -131,7 +144,8 @@ $(document).ready(function(){
 
   var projectSlide = new ScrollMagic.Scene({
    triggerElement:"#slide02",
-   reverse:false,
+    reverse:true,
+   // reverse:false,
    })
   .setTween(slideInProjects)
   // .addIndicators({name:"Slide in projects"})
@@ -140,7 +154,7 @@ $(document).ready(function(){
   var pinFourthScene = new ScrollMagic.Scene({
     triggerElement:"#slide03",
     triggerHook:0,
-    duration:100,
+    duration:800,
     // **********
     // duration:$(window).height(),
   })
@@ -154,7 +168,8 @@ $(document).ready(function(){
  var popInSkills = new ScrollMagic.Scene({
     triggerElement:"#slide03",
     triggerHook:0.3,
-    reverse:false,
+    reverse:true,
+    // reverse:false,
   })
   .setTween(skillsAnimation)
   // .addIndicators({name:"in skills"})
@@ -171,13 +186,15 @@ $(document).ready(function(){
   .addTo(controller);
 
  var slideContact = new TimelineMax()
-     .fromTo($('.contactsbox'), 1, {autoAlpha:0, y:'600px', display:"none"}, { autoAlpha:1, y:'0px', display:"block", ease:Elastic.easeOut})
+     // .fromTo($('.contactsbox'), 1, {autoAlpha:0, y:'600px', display:"none"}, { autoAlpha:1, y:'0px', display:"block", ease:Elastic.easeOut})
+     .fromTo($('.contactsbox'), 5, {autoAlpha:0}, { autoAlpha:1, ease:Elastic.easeOut}, 0.5)
      .to($('.mousescroll'), 0.4, {rotation:180, ease:Power4.easeInOut});
 
   var slideUpContact = new ScrollMagic.Scene({
     triggerElement:"#slide04",
     triggerHook:0.2,
-    reverse:false,
+    reverse:true,
+    // reverse:false,
   })
   .setTween(slideContact)
   // .addIndicators({name:"slide Contact"})

@@ -20,6 +20,7 @@ $(document).ready(function(){
 
     // Second canvas used for the stars
     bgCtx.fillStyle = '#05004c';
+
     bgCtx.fillRect(0,0,width,height);
 
 // stars

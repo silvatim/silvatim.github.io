@@ -12,12 +12,15 @@ nav {
     position: fixed;
     /* visibility: none; */
     z-index: 9999;
-    /* background:rgba(0,0,0, 0.5); */
+    /* background:rgba(13,13,50, 0.5); */
+    /* background:rgba(73,100,155, 0.3); */
+    /* background:rgba(0,0,0,0.5); */
     width:100vw;
-    height:10vh;
+    height:7vh;
 }
 nav ul {
     list-style: none;
+    margin-top:11px;
 }
 nav li {
     float: left;
@@ -27,7 +30,9 @@ nav a {
 	display: inline-block;
 	margin: 0px 10px;
 	outline: none;
-  color:#2F395E;
+  /* color:#2F395E; */
+  /* color:white; */
+  color: #979CB5;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -51,9 +56,12 @@ nav a:focus {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 60px;
-	height: 60px;
-  border:2px solid #2F395E;
+	/* width: 60px; */
+	/* height: 60px; */
+	width: 30px;
+	height: 30px;
+  /* border:2px solid #2F395E; */
+  border:2px solid #7F89A5;
 	border-radius: 50%;
 	content: '';
 	opacity: 0;

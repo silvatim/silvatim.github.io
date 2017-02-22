@@ -61,7 +61,7 @@ $(document).ready(function(){
 
   var firstSceneFadeToSecond = new ScrollMagic.Scene({
     triggerElement:"#slide01",
-    triggerHook:0.2,
+    triggerHook:0.3,
     reverse:false,
     // offset:1,
   })
@@ -149,7 +149,7 @@ $(document).ready(function(){
 
  var popInSkills = new ScrollMagic.Scene({
     triggerElement:"#slide03",
-    triggerHook:0.2,
+    triggerHook:0.3,
     reverse:false,
   })
   .setTween(skillsAnimation)

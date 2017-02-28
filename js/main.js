@@ -9,7 +9,6 @@ $(document).ready(function(){
             $(this).addClass("open");
         }
     });
-
   // grab an element
   var myElement = document.querySelector("#nav-main");
   // construct an instance of Headroom, passing the element
